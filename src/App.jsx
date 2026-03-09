@@ -6,6 +6,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 import "./index.css";
 
 function App() {
@@ -14,9 +15,6 @@ function App() {
             <div className="bg-black min-h-screen text-white">
                 {/* Navbar + Auth Buttons */}
                 <Navbar />
-                <nav className="p-4 flex justify-end">
-                    <AuthButtons />
-                </nav>
 
                 {/* Routes */}
                 <Routes>
@@ -35,15 +33,6 @@ function App() {
                         }
                     />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/designs" element={<Designs />} />
-                    <Route path="/equipment" element={<Equipment />} />
-                    <Route path="/features" element={<Features />} />
-                    <Route path="/filament" element={<Filament />} />
-                    <Route path="/highlights" element={<Highlights />} />
-                    <Route path="/how-it-works" element={<HowItWorks />} />
-                    <Route path="/model" element={<Model />} />
-                    <Route path="/software" element={<Software />} />
-                    <Route path="/client-space" element={<ClientSpace />} />
                 </Routes>
 
                 {/* Footer */}
