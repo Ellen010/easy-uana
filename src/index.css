@@ -2,11 +2,10 @@
 @import "tw-animate-css";
 
 body {
-  margin: 0;
+  width: 85vw;
+  margin: 0 auto;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
   background-color: #000000;
 }
 
@@ -33,10 +32,9 @@ body {
   --color-gray-800: oklch(0.279 0.041 260.031);
   --color-gray-900: oklch(0.208 0.042 265.755);
   --color-gray-950: oklch(0.129 0.042 264.695);
-
-  /*FONT STYLING */
-
 }
+
+/*FONT STYLING */
 
 a {
   font-weight: 500;
@@ -71,15 +69,3 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

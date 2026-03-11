@@ -5,8 +5,9 @@ import * as Sentry from "@sentry/react";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import "./index.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Router>
             <div className="bg-black min-h-screen text-white">
                 {/* Navbar + Auth Buttons */}
-                <Navbar />
+
 
                 {/* Routes */}
                 <Routes>
@@ -23,6 +24,8 @@ function App() {
                         element={
                             <>
                                 <Navbar />
+                                <About />
+                                <Contact />
                                 {/* <Highlights />
                 <ClientSpace />
                 <Model />
