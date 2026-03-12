@@ -6,7 +6,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 import Navbar from "./components/Navbar";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Download from "./components/Download";
+import TermsAndConditions  from "./components/TermsAndConditions";
 import Footer from "./components/Footer";
 import "./index.css";
 
@@ -25,7 +26,8 @@ function App() {
                             <>
                                 <Navbar />
                                 <About />
-                                <Contact />
+                                <Download />
+                                <TermsAndConditions />
                                 {/* <Highlights />
                 <ClientSpace />
                 <Model />
@@ -35,7 +37,7 @@ function App() {
                             </>
                         }
                     />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/download" element={<Download />} />
                 </Routes>
 
                 {/* Footer */}

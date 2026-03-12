@@ -7,12 +7,12 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="w-full py-5 sm:px-10">
+        <header className="w-full py-7 sm:px-10">
             <nav className="flex items-center justify-between w-full">
                     <Link to ="/">
                         <img src={logo} alt="logo" className="h-24 sm:h-30 md:h-36 w-auto" />
                     </Link>
-                    <h1 className="text-6xl dark:text-mist-50 light:text-emerald-950">Easy-uana</h1>
+                    <h1 className="text-8xl dark:text-mist-50 light:text-emerald-950">Easy-uana</h1>
 
                 {/*Desktop Menu*/}
                         <div className="hidden sm:flex space-x-1">

@@ -1,0 +1,129 @@
+import React from 'react'
+
+const TermsAndConditions = () => {
+    return (
+        <section>
+            <div className="m-9">
+                <p className="text-xl">
+                    <h2>
+                        TERMS AND CONDITIONS for Easy-Uana
+                    </h2>
+                    <p>
+                        Last Updated: 05.22.2025
+                    </p>
+                    <p>
+                        Welcome to Easy Uana ("App"), a software application designed to assist licensed cannabis businesses in managing plant tags, harvesting, and compliance reporting for METRC in legal states. Please read these Terms and Conditions ("Terms") carefully before using the App.
+                    </p>
+                    <p>
+                        By accessing or using Easy Uana, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you may not use the App.
+                    </p>
+
+                    <p>
+                        1. Eligibility
+                        You must be at least 21 years old and hold a valid cannabis license in a state where cannabis is legally regulated to use this App. By using Easy Uana, you confirm that you meet these requirements.
+
+                    </p>
+                    <p>
+                        2. Compliance with Laws
+                        You are solely responsible for ensuring compliance with all applicable federal, state, and local cannabis regulations, including but not limited to METRC requirements. The App is a tool for facilitating compliance but does not guaranteecompliance with any legal or regulatory obligations.
+
+                    </p>
+                    <p>
+                        3. Account Registration
+                        To use the App, you must create an account with accurate and complete information.
+
+                        You are responsible for maintaining the security of your account and password.
+
+                        Any activity occurring under your account is your responsibility.
+                    </p>
+                    <p>
+                        4. Use of the App
+                        The App is intended for use by licensed cannabis businesses for tracking plant tags, harvesting, and compliance reporting with METRC.
+
+                        You agree not to use the App for any unlawful or unauthorized purpose.
+
+                        You may not modify, reverse-engineer, or exploit any part of the App.
+                    </p>
+                    <p>
+                        5. Data Collection and Privacy
+                        The App may collect and store data related to cannabis cultivation, plant tags, and harvesting.
+
+                        We do not sell or distribute your data to third parties without your consent, except as required by law or for METRC integration.
+
+                        For more information, please refer to our Privacy Policy.
+                    </p>
+                    <p>
+                        6. Integration with METRC
+                        The App is designed to facilitate reporting to METRC, but is not an official METRC product.
+
+                        You acknowledge that METRC may have its own data requirements, and it is your responsibility to verify that all submitted information is accurate and complete.
+
+                    </p>
+                    <p>
+                        7. Fees and Payments
+                        Certain features of the App may require payment of fees.
+
+                        All payments are non-refundable unless otherwise specified.
+
+                        Failure to pay fees may result in suspension or termination of your account.
+                    </p>
+                    <p>
+                        8. Intellectual Property
+                        All content, features, and functionality of the App, including software, trademarks, and logos, are the property of Best Consulting USA.
+
+                        You are granted a limited, non-exclusive, and non-transferable license to use the App solely for business purposes related to cannabis compliance.
+
+                    </p>
+                    <p>
+                        9. Termination
+                        We reserve the right to suspend or terminate your account at any time if you violate these Terms.
+
+                        You may terminate your account at any time, but no refunds will be issued for any unused portion of a paid subscription.
+                    </p>
+                    <p>
+                        10. Disclaimers and Limitation of Liability
+                        The App is provided "as is" without warranties of any kind.
+
+                        We are not liable for any damages, losses, or regulatory penalties resulting from the use or inability to use the App.
+
+                        We do not provide legal advice. You should consult a qualified attorney for legal compliance guidance.
+
+                    </p>
+                    <p>
+                        11. Indemnification
+                        You agree to indemnify and hold harmless Best Consulting USA  from any claims, liabilities, damages, or expenses arising from your use of the App or violation of these Terms.
+
+                    </p>
+                    <p>
+                        12. Changes to These Terms
+                        We may update these Terms from time to time. Continued use of the App after any modifications constitutes your acceptance of the updated Terms.
+
+                    </p>
+                    <p>
+                        13. Governing Law
+                        These Terms are governed by the laws of USA, without regard to its conflict of law principles.
+                    </p>
+                    <p>
+
+                        14. Apple Standard End User License Agreement (EULA)
+                        If you download or use Easy-Uana via the Apple App Store, your use of the App is also subject to Apple’s Standard End User License Agreement (EULA), which can be found here:
+                        https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+                        In the event of any conflict between these Terms and the Apple EULA, the Apple EULA will apply to the extent required by Apple.
+
+                    </p>
+                    <p>
+
+                        15. Contact Information
+                        For any questions regarding these Terms, please contact us at help.easyuana@gmail.com
+                    </p>
+
+
+
+
+                </p>
+            </div>
+        </section>
+    )
+}
+export default TermsAndConditions
