@@ -1,44 +1,70 @@
-import { React, useState } from "react"
-import logo from "/logo.png"
-import { menuItems }  from "/src/constants/index.js"
-import { Link } from 'react-router-dom'
+@import "tailwindcss";
+@import "tw-animate-css";
 
-const Navbar = () => {
-    const [open, setOpen] = useState(false);
-
-    return (
-        <header className="w-full py-5 sm:px-10">
-            <nav className="flex items-center justify-between w-full">
-                    <Link to ="/">
-                        <img src={logo} alt="logo" className="h-24 sm:h-30 md:h-36 w-auto" />
-                    </Link>
-                    <h1 className="font-frijole text-6xl dark:text-mist-50 light:text-emerald-950">Easy-uana</h1>
-
-                {/*Desktop Menu*/}
-                        <div className="hidden sm:flex space-x-1">
-                            {menuItems.map((item) => (
-                                <Link key={item.name} to={item.path}  className="px-2 text-sm cursor-pointer text-gray hover:scale-120 transition-transform duration-300"> {item.name} </Link>
-                            ))}
-                        </div>
-
-
-                {/*Mobile Menu*/}
-                    <button className="sm:hidden text-white" onClick= {() => setOpen(!open)}> ☰ </button>
-                    {open && (
-                        <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center py-5 sm:hidden z-50">
-                            {menuItems.map((item) => (
-                                <Link key={item.name} to={item.path} className="py-2 text-white text-lg"> {item.name} </Link>
-                            ))}
-                        </div>
-                    )}
-
-
-
-
-
-
-            </nav>
-        </header>
-    )
+body {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  place-items: center;
+  background-color: #000000;
 }
-export default Navbar
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-mist-50: oklch(98.7% 0.002 197.1);
+  --color-emerald-950: oklch(26.2% 0.051 172.552);
+  --color-gray-300: oklch(0.869 0.022 252.894);
+  --color-gray-400: oklch(0.704 0.04 256.788);
+  --color-gray-500: oklch(0.554 0.046 257.417);
+  --color-gray-600: oklch(0.446 0.043 257.281);
+  --color-gray-700: oklch(0.372 0.044 257.287);
+  --color-gray-800: oklch(0.279 0.041 260.031);
+  --color-gray-900: oklch(0.208 0.042 265.755);
+  --color-gray-950: oklch(0.129 0.042 264.695);
+}
+
+/*FONT STYLING */
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #35962c;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  font-family: 'Frijole', cursive;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #25781e;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
