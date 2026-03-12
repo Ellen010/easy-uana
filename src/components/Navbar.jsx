@@ -12,7 +12,7 @@ const Navbar = () => {
                     <Link to ="/">
                         <img src={logo} alt="logo" className="h-24 sm:h-30 md:h-36 w-auto" />
                     </Link>
-                    <h1 className="font-frijole text-6xl dark:text-mist-50 light:text-emerald-950">Easy-uana</h1>
+                    <h1 className="text-9xl dark:text-mist-50 light:text-emerald-950">Easy-uana</h1>
 
                 {/*Desktop Menu*/}
                         <div className="hidden sm:flex space-x-1">
