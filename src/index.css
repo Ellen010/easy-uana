@@ -43,9 +43,21 @@ a:hover {
   color: #35962c;
 }
 
+h1 {
+  font-family: 'Frijole', cursive;
+}
+
+h1:hover {
+  color: #35962c;
+}
+
 
 h1 {
   font-family: 'Frijole', cursive;
+}
+
+p {
+  margin: 3rem;
 }
 
 button {
@@ -67,14 +79,44 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-p {
-  margin: 3rem;
+//* INTRO IMAGE ANNIMATION *//
+/* Full screen intro container */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
 }
 
-h2 {
-  font-family: 'Frijole', cursive;
+/* Each half of the image */
+.uana {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/uana.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: transform 1.2s ease-in-out;
 }
 
-h2:hover {
-  color: #35962c;
+.left {
+  left: 0;
+  background-position: left center;
+}
+
+.right {
+  right: 0;
+  background-position: right center;
+}
+
+.open .left {
+  transform: translateX(-100%);
+}
+
+.open .right {
+  transform: translateX(100%);
 }

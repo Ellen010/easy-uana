@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as Sentry from "@sentry/react";
@@ -12,6 +12,26 @@ import Footer from "./components/Footer";
 import "./index.css";
 
 function App() {
+    useEffect(() => {
+        const intro = document.getElementById("intro");
+
+        const handleScroll = () => {
+            if (!intro) return;
+
+            intro.classList.add("open");
+
+            setTimeout(() => {
+                intro.style.display = "none";
+            }, 1200);
+
+            window.removeEventListener("scroll", handleScroll);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <Router>
             <div className="bg-black min-h-screen text-white">
@@ -24,6 +44,10 @@ function App() {
                         path="/"
                         element={
                             <>
+                                <div id="intro">
+                                    <div className="uana left"></div>
+                                    <div className="uana right"></div>
+                                </div>
                                 <Navbar />
                                 <About />
                                 <Download />

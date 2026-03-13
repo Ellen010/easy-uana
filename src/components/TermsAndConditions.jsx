@@ -2,12 +2,11 @@ import React from 'react'
 
 const TermsAndConditions = () => {
     return (
-        <section>
+        <section className="my-30">
             <div className="m-9">
-                <p className="text-xl">
-                    <h2>
+                    <h1 className="text-center text-5xl dark:text-mist-50 light:text-emerald-950">
                         TERMS AND CONDITIONS for Easy-Uana
-                    </h2>
+                    </h1>
                     <p>
                         Last Updated: 05.22.2025
                     </p>
@@ -118,10 +117,6 @@ const TermsAndConditions = () => {
                         For any questions regarding these Terms, please contact us at help.easyuana@gmail.com
                     </p>
 
-
-
-
-                </p>
             </div>
         </section>
     )
