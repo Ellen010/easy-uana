@@ -4,7 +4,7 @@ const TermsAndConditions = () => {
     return (
         <section className="my-30">
             <div className="m-9">
-                    <h1 className="text-center text-5xl dark:text-mist-50 light:text-emerald-950">
+                    <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">
                         TERMS AND CONDITIONS for Easy-Uana
                     </h1>
                     <p>

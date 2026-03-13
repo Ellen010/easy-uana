@@ -51,12 +51,16 @@ h1:hover {
   color: #35962c;
 }
 
-
-h1 {
+h2 {
   font-family: 'Frijole', cursive;
 }
 
+h2:hover {
+  color: #35962c;
+}
+
 p {
+  font-size:  clamp(1em, 1vw, 1.5em);
   margin: 3rem;
 }
 
@@ -113,4 +117,9 @@ button:focus-visible {
   width: calc(100vw / 40);
   height: calc(100vh / 25);
   position: absolute;
+}
+
+/*DOWNLOAD PAGE*/
+.product {
+  @apply w-full h-full object-cover object-center scale-150 opacity-0 rounded-lg;
 }

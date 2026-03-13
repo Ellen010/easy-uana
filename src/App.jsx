@@ -6,6 +6,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import gsap from "gsap";
 
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import About from "./components/About";
 import Download from "./components/Download";
 import TermsAndConditions  from "./components/TermsAndConditions";
@@ -14,51 +15,50 @@ import "./index.css";
 
 function App() {
 
-            useEffect(() => {
+    useEffect(() => {
 
-                const grid = document.getElementById("intro");
-                const cols = 40;
-                const rows = 25;
+        const grid = document.getElementById("intro");
+        const cols = 40;
+        const rows = 25;
 
-                for (let y = 0; y < rows; y++) {
-                    for (let x = 0; x < cols; x++) {
-                        const pixel = document.createElement("div");
-                        pixel.classList.add("pixel");
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                const pixel = document.createElement("div");
+                pixel.classList.add("pixel");
 
-                        pixel.style.left = `${(x * 100) / cols}%`;
-                        pixel.style.top = `${(y * 100) / rows}%`;
+                pixel.style.left = `${(x * 100) / cols}%`;
+                pixel.style.top = `${(y * 100) / rows}%`;
 
-                        // Correct background position
-                        pixel.style.backgroundPosition = `${(x * 100) / (cols - 1)}% ${(y * 100) / (rows - 1)}%`;
+                // Correct background position
+                pixel.style.backgroundPosition = `${(x * 100) / (cols - 1)}% ${(y * 100) / (rows - 1)}%`;
 
-                        grid.appendChild(pixel);
-                    }
+                grid.appendChild(pixel);
+            }
+        }
+
+        const handleScroll = () => {
+
+            gsap.to(".pixel",{
+                opacity:0,
+                scale:0,
+                duration:0.1,
+                stagger:{
+                    amount:0.95,
+                    from:"random"
+                },
+                onComplete:()=>{
+                    document.getElementById("intro").style.display="none";
                 }
+            });
 
-                const handleScroll = () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
 
-                    gsap.to(".pixel",{
-                        opacity:0,
-                        scale:0,
-                        duration:0.3,
-                        stagger:{
-                            amount:0.2,
-                            from:"random"
-                        },
-                        onComplete:()=>{
-                            document.getElementById("intro").style.display="none";
-                        }
-                    });
+        window.addEventListener("scroll", handleScroll);
 
-                    window.removeEventListener("scroll", handleScroll);
-                };
+        return ()=>window.removeEventListener("scroll", handleScroll);
 
-                window.addEventListener("scroll", handleScroll);
-
-                return ()=>window.removeEventListener("scroll", handleScroll);
-
-            },[]);
-
+    },[]);
     return (
         <Router>
             <div className="bg-black min-h-screen text-white">
@@ -74,6 +74,7 @@ function App() {
                                 <div id="intro">
                                     <div id="pixel-grid"></div>
                                 </div>
+                                <Hero />
                                 <About />
                                 <Download />
                                 <TermsAndConditions />

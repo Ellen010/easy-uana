@@ -2,11 +2,67 @@ import { React } from "react"
 
 const About = () => {
     return (
-        <section className="flex items-center justify-center my-30">
-
-            <div>
-                <p className="text-2xl">
-                    Tired of the tedious, time-consuming process of tracking your cannabis plants for METRC compliance? Say goodbye to manual data entry and hello to Easy-uana — the revolutionary iOS app designed exclusively for cannabis growers. With Easy-uana, you can effortlessly capture RFID tag numbers using just your iPhone, instantly format them into METRC-compliant templates, and download them straight to your computer. Simplifying compliance has never been this easy, affordable, or efficient.
+        <section className="my-30">
+            <div className="m-9">
+                <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                    Easy-uana is a Game-Changer
+                </h2>
+                <p>
+                    1. Capture RFID Tag Numbers in Seconds
+                </p>
+                <p>
+                    Fast and Accurate: Simply point your iPhone’s camera at the RFID tag, and Easy-uana captures the tag number with precision.
+                    No Expensive Gear Needed: Forget about clunky handheld RFID scanners—all you need is your phone.
+                    Eliminates Errors: Say goodbye to manual input mistakes and the stress of compliance violations.
+                </p>
+                <p>
+                    2. Instant METRC-Compliant Formatting
+                </p>
+                <p>
+                    Plug-and-Play Templates: The app auto-formats your captured tag numbers into a ready-to-use METRC template.
+                    Simplified Downloads: Save your template directly to your computer in seconds, keeping your workflow smooth and efficient.
+                    One Template at a Time, Perfectly Tailored: Focus on what matters most—your plants—while Easy-uana handles the compliance details.
+                </p>
+                <p>
+                    3. Built for Growers, Not Tech Gurus
+                </p>
+                <p>
+                    User-Friendly Interface: Designed with growers in mind, Easy-uana is intuitive and easy to navigate.
+                    Quick Setup: Get started in minutes with minimal learning curve.
+                    Reminders for Deadlines: Never miss a compliance deadline again with built-in notifications.
+                    Transform Your Operation with Easy-uana
+                    Boost Efficiency
+                    Speed Up Data Capture: Input RFID tag numbers in record time, freeing up hours for other tasks.
+                    Streamline Compliance: Easy-uana takes the guesswork out of regulatory reporting.
+                    Save Money
+                    No Extra Hardware Costs: Use the tools you already have—your iPhone.
+                    Avoid Costly Fines: Accurate data means staying compliant and penalty-free.
+                    Stay in Control
+                    Customizable Simplicity: Easy-uana focuses on one template at a time, ensuring your data is clean, precise, and ready for METRC.
+                    Audit-Ready Records: Keep your operation running smoothly with accurate, organized files.
+                    Perfect for Every Grower
+                    Small Grow Operations
+                    Keep your compliance process simple and stress-free with an affordable, straightforward solution.
+                </p>
+                <p>
+                    Large Cultivators
+                </p>
+                <p>
+                    Easily manage the complexities of compliance without adding unnecessary overhead or equipment.
+                </p>
+                <p>
+                    Why Growers Love Easy-uana
+                </p>
+                <p>
+                    Focused Simplicity: Does one thing perfectly—capturing and formatting RFID tag numbers.
+                    Reliable Results: Beta testers report saving 50% of their compliance management time.
+                    No Hidden Costs: Affordable, transparent pricing with no need for additional hardware.
+                </p>
+                <p>
+                    Take Control of Compliance Today
+                </p>
+                <p>
+                    Don’t let METRC compliance slow you down. With Easy-uana, you can simplify your workflow, save time, and focus on growing your business.
                 </p>
             </div>
 
