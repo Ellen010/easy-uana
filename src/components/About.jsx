@@ -1,8 +1,8 @@
-import { React, useState, useContext, useEffect } from "react"
+import { React } from "react"
 
 const About = () => {
     return (
-        <section className="flex items-center justify-center">
+        <section className="flex items-center justify-center my-30">
 
             <div>
                 <p className="text-2xl">

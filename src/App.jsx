@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as Sentry from "@sentry/react";
 import { Auth0Provider } from "@auth0/auth0-react";
+import gsap from "gsap";
 
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -12,11 +13,57 @@ import Footer from "./components/Footer";
 import "./index.css";
 
 function App() {
+
+            useEffect(() => {
+
+                const grid = document.getElementById("intro");
+                const cols = 40;
+                const rows = 25;
+
+                for (let y = 0; y < rows; y++) {
+                    for (let x = 0; x < cols; x++) {
+                        const pixel = document.createElement("div");
+                        pixel.classList.add("pixel");
+
+                        pixel.style.left = `${(x * 100) / cols}%`;
+                        pixel.style.top = `${(y * 100) / rows}%`;
+
+                        // Correct background position
+                        pixel.style.backgroundPosition = `${(x * 100) / (cols - 1)}% ${(y * 100) / (rows - 1)}%`;
+
+                        grid.appendChild(pixel);
+                    }
+                }
+
+                const handleScroll = () => {
+
+                    gsap.to(".pixel",{
+                        opacity:0,
+                        scale:0,
+                        duration:0.3,
+                        stagger:{
+                            amount:0.2,
+                            from:"random"
+                        },
+                        onComplete:()=>{
+                            document.getElementById("intro").style.display="none";
+                        }
+                    });
+
+                    window.removeEventListener("scroll", handleScroll);
+                };
+
+                window.addEventListener("scroll", handleScroll);
+
+                return ()=>window.removeEventListener("scroll", handleScroll);
+
+            },[]);
+
     return (
         <Router>
             <div className="bg-black min-h-screen text-white">
                 {/* Navbar + Auth Buttons */}
-
+                <Navbar />
 
                 {/* Routes */}
                 <Routes>
@@ -24,7 +71,9 @@ function App() {
                         path="/"
                         element={
                             <>
-                                <Navbar />
+                                <div id="intro">
+                                    <div id="pixel-grid"></div>
+                                </div>
                                 <About />
                                 <Download />
                                 <TermsAndConditions />
@@ -37,7 +86,9 @@ function App() {
                             </>
                         }
                     />
+                    <Route path="/about" element={<About />} />
                     <Route path="/download" element={<Download />} />
+                    <Route path="/termsAndConditions" element={<TermsAndConditions />} />
                 </Routes>
 
                 {/* Footer */}
