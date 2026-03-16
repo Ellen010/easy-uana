@@ -3,12 +3,14 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx'
-import { useGSAP } from '@gsap/react'
+/*
 import gsap from 'gsap';
-import { animateWithGsap } from '../assets/constants/animations.js';
+import { useGSAP } from '@gsap/react';
+import { animateWithGsap } from '../constants/animations.js';
+*/
 
 const Contact = () => {
-    useGSAP(() => {
+  /*  useGSAP(() => {
         gsap.from('#contact', {
             scrollTrigger: {
                 trigger: '#contact',
@@ -26,7 +28,8 @@ const Contact = () => {
             duration: 1,
             ease: 'power2.inOut'
         })
-    }, []);
+    }, []);*/
+
     const formRef = useRef();
 
     const { alert, showAlert, hideAlert } = useAlert();
@@ -57,7 +60,7 @@ const Contact = () => {
                     setLoading(false);
                     showAlert({
                         show: true,
-                        text: 'Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais',
+                        text: 'Your message has been sent successfully. We will reply as soon as possible.',
                         type: 'success',
                     });
 
@@ -84,74 +87,65 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact">
+        <section id="contact" className="my-30">
+            <div className="flex flex-col items-center">
+                <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">
+                    Contact
+                </h1>
+                <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+                    <div className="w-full text-xl ms-5 ml-30 text-justify lg:text-left leading-relaxed">
+                        <p className="mini-title g_fadeIn">Contact us for more information </p>
+                        <div className="contact-container g_fadeIn">
+                            {alert.show && <Alert {...alert} />}
+                            <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
+                                <label className="space-y-3">
+                                    <span className="field-label">Your name</span>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        required
+                                        className="field-input"
+                                        placeholder="ex., John Doe"
+                                    />
+                                </label>
 
-            <h1 className="title g_fadeIn">Contact</h1>
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
-                <div className="photo-left g_fadeIn">
-                    <img src="/contact-pic.png" alt="ÉlanFinance Employe working on a financial report" />
-                </div>
+                                <label className="space-y-3">
+                                    <span className="field-label">Your email</span>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="field-input"
+                                        placeholder="ex., johndoe@gmail.com"
+                                    />
+                                </label>
 
+                                <label className="space-y-3">
+                                    <span className="field-label">Your message</span>
+                                    <textarea
+                                        name="message"
+                                        value={form.message}
+                                        onChange={handleChange}
+                                        required
+                                        rows={5}
+                                        className="field-input"
+                                        placeholder="Share your thougths or questionts here..."
+                                    />
+                                </label>
 
-                <div className="w-full text-xl lg:w-1/2 ms-5 ml-30 text-justify lg:text-left leading-relaxed">
-                    <p className="mini-title g_fadeIn">Contactez-nous pour plus d'informations </p>
-                    <div className="contact-container">
+                                <button type="submit" className="px-10 py-5 rounded-3xl bg-green-500 m-5 hover:bg-green-200 backdrop-blur hover:scale-110 flex-center text-white text-2xl" disabled={loading}>
+                                    {loading ? "Sending email..." : "Contact"}
+                                </button>
+                            </form>
 
-                        {alert.show && <Alert {...alert} />}
-                        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-                            <label className="space-y-3">
-                                <span className="field-label">Votre nom</span>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    required
-                                    className="field-input"
-                                    placeholder="ex., John Doe"
-                                />
-                            </label>
-
-                            <label className="space-y-3">
-                                <span className="field-label">Adresse email</span>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={form.email}
-                                    onChange={handleChange}
-                                    required
-                                    className="field-input"
-                                    placeholder="ex., johndoe@gmail.com"
-                                />
-                            </label>
-
-                            <label className="space-y-3">
-                                <span className="field-label">Your message</span>
-                                <textarea
-                                    name="message"
-                                    value={form.message}
-                                    onChange={handleChange}
-                                    required
-                                    rows={5}
-                                    className="field-input"
-                                    placeholder="Partagez vos réflexions ou vos questions..."
-                                />
-                            </label>
-
-                            <button type="submit" disabled={loading}>
-                                {loading ? "Envoi en cours..." : "Contactez-nous"}
-                            </button>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
-
-
-
             </div>
-
-
-
         </section>
     )
 }

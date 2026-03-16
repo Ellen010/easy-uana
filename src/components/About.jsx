@@ -29,18 +29,6 @@ const About = () => {
 
         // Animate text
         animateWithGsap('.g_text', { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 });
-
-        // ScrollTrigger animation for #chip
-        gsap.from('#chip', {
-            scrollTrigger: {
-                trigger: '#chip',
-                start: '20% bottom',
-            },
-            opacity: 0,
-            scale: 2,
-            duration: 2,
-            ease: 'power2.inOut',
-        });
     }, []);
 
     return (
@@ -96,7 +84,7 @@ const About = () => {
                     5. Why Growers Love Easy-uana
                 </p>
                 <p>
-                    Focused Simplicity: Does one thing perfectly—capturing and formatting RFID tag numbers.
+                    Focused Simplicity: Does one thing perfectly — capturing and formatting RFID tag numbers.
                     Reliable Results: Beta testers report saving 50% of their compliance management time.
                     No Hidden Costs: Affordable, transparent pricing with no need for additional hardware.
                 </p>

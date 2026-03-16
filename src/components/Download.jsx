@@ -13,7 +13,7 @@ const Download = () => {
                 The app is designed to save time, reduce human error, and simplify plant tracking for cannabis cultivation businesses operating in regulated states. Download Easy-uana today from the App Store and streamline your compliance workflow with a tool built specifically for growers.
             </p>
             <div className="flex flex-col items-center opacity-100 translate-y-10 mt-3 mb-3">
-                <a href="https://apps.apple.com/us/app/easyuana/id6742842577" className="px-20 py-5 rounded-3xl bg-green-500 m-5 hover:bg-green-200 backdrop-blur flex-center text-white text-2xl" target="_blank" rel="noopener noreferrer"> Download </a>
+                <a href="https://apps.apple.com/us/app/easyuana/id6742842577" className="px-20 py-5 rounded-3xl bg-green-500 m-5 hover:bg-green-200 backdrop-blur hover:scale-110 flex-center text-white text-2xl" target="_blank" rel="noopener noreferrer"> Download </a>
             </div>
 
         </section>

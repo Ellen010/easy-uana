@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.15.0",
+    "@emailjs/browser": "^4.4.1",
     "@sentry/react": "^10.42.0",
     "@tailwindcss/vite": "^4.2.1",
     "gsap": "^3.14.2",
