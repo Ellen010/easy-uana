@@ -45,13 +45,13 @@ const About = () => {
                     Keep your compliance process simple and stress-free with an affordable, straightforward solution.
                 </p>
                 <p>
-                    Large Cultivators
+                    4. Large Cultivators
                 </p>
                 <p>
                     Easily manage the complexities of compliance without adding unnecessary overhead or equipment.
                 </p>
                 <p>
-                    Why Growers Love Easy-uana
+                    5. Why Growers Love Easy-uana
                 </p>
                 <p>
                     Focused Simplicity: Does one thing perfectly—capturing and formatting RFID tag numbers.
@@ -59,7 +59,7 @@ const About = () => {
                     No Hidden Costs: Affordable, transparent pricing with no need for additional hardware.
                 </p>
                 <p>
-                    Take Control of Compliance Today
+                    6. Take Control of Compliance Today
                 </p>
                 <p>
                     Don’t let METRC compliance slow you down. With Easy-uana, you can simplify your workflow, save time, and focus on growing your business.
