@@ -5,7 +5,7 @@ const Download = () => {
     return (
         <section className="my-30">
 
-            <h2 id="features_title" className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">Download</h2>
+            <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">Download</h2>
             <p className="items-center justify-center text-2xl">
                 Easy-uana is now available on the Apple App Store, giving licensed cannabis growers a faster and smarter way to manage METRC compliance. Instead of manually typing RFID tag numbers and formatting spreadsheets, Easy-uana lets you capture tag numbers directly with your iPhone, automatically format them into METRC-ready templates, and export the data instantly.
             </p>

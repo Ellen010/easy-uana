@@ -1,12 +1,15 @@
 import React from 'react'
+import logo from '/public/logo.png'
 
 const TermsAndConditions = () => {
     return (
-        <section className="my-30">
-            <div className="m-9">
-                    <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">
-                        TERMS AND CONDITIONS for Easy-Uana
-                    </h1>
+        <section className="my-30 relative">
+            <div className="m-9 relative max-w-4xl mx-auto leading-relaxed space-y-4">
+                <img src={logo} alt="logo" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] opacity-30 pointer-events-none"/>
+
+                <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">
+                    TERMS AND CONDITIONS for Easy-Uana
+                </h1>
                     <p>
                         Last Updated: 05.22.2025
                     </p>
