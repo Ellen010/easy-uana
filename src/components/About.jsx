@@ -33,8 +33,8 @@ const About = () => {
 
     return (
         <section ref={sectionRef} className="my-30">
-            <div className="m-9">
-                <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+            <div>
+                <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
                     Easy-uana is a Game-Changer
                 </h2>
                 <p>

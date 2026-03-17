@@ -10,7 +10,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Download from "./components/Download";
 import TermsAndConditions  from "./components/TermsAndConditions";
-{/*import Contact from "./components/Contact";*/}
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
 
@@ -92,7 +92,7 @@ function App() {
                                 <About />
                                 <Download />
                                 <TermsAndConditions />
-                                {/*<Contact />*/}
+                                <Contact />
                             </>
                         }
                     />

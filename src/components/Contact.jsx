@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx'
+import Button from '../components/Button.jsx';
 /*
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -87,64 +88,73 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="my-30">
-            <div className="flex flex-col items-center">
-                <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950">
+        <section id="contact" className="min-h-screen flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center w-full max-w-xl px-6">
+
+                <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950 mb-10">
                     Contact
                 </h1>
-                <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
-                    <div className="w-full text-xl ms-5 ml-30 text-justify lg:text-left leading-relaxed">
-                        <p className="mini-title g_fadeIn">Contact us for more information </p>
-                        <div className="contact-container g_fadeIn">
-                            {alert.show && <Alert {...alert} />}
-                            <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-                                <label className="space-y-3">
-                                    <span className="field-label">Your name</span>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={form.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="field-input"
-                                        placeholder="ex., John Doe"
-                                    />
-                                </label>
 
-                                <label className="space-y-3">
-                                    <span className="field-label">Your email</span>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={form.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="field-input"
-                                        placeholder="ex., johndoe@gmail.com"
-                                    />
-                                </label>
+                <p className="text-center mb-6"> Contact us for more information </p>
 
-                                <label className="space-y-3">
-                                    <span className="field-label">Your message</span>
-                                    <textarea
-                                        name="message"
-                                        value={form.message}
-                                        onChange={handleChange}
-                                        required
-                                        rows={5}
-                                        className="field-input"
-                                        placeholder="Share your thougths or questionts here..."
-                                    />
-                                </label>
+                {alert.show && <Alert {...alert} />}
 
-                                <button type="submit" className="px-10 py-5 rounded-3xl bg-green-500 m-5 hover:bg-green-200 backdrop-blur hover:scale-110 flex-center text-white text-2xl" disabled={loading}>
-                                    {loading ? "Sending email..." : "Contact"}
-                                </button>
-                            </form>
-
+                <form
+                    ref={formRef}
+                    onSubmit={handleSubmit}
+                    className="w-full flex flex-col space-y-6"
+                >
+                    <label className="flex flex-col text-start space-y-6">
+                        <span>Your name</span>
+                        <div className="p-[2px] rounded-3xl bg-gradient-to-b from-[#00c950] via-[#386641] to-[#228B22]">
+                            <input
+                                type="text"
+                                name="name"
+                                value={form.name}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-5 py-3 rounded-sm bg-black text-start outline-none"
+                                placeholder="ex., John Doe"
+                            />
                         </div>
+                    </label>
+
+                    <label className="flex flex-col space-y-6 text-start">
+                        <span>Your email</span>
+                        <div className="p-[2px] rounded-3xl bg-gradient-to-b from-[#00c950] via-[#386641] to-[#228B22]">
+                            <input
+                                type="email"
+                                name="email"
+                                value={form.email}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-5 py-3 rounded-sm bg-black text-start outline-none"
+                                placeholder="ex., johndoe@gmail.com"
+                            />
+                        </div>
+                    </label>
+
+                    <label className="flex flex-col space-y-6 text-start">
+                        <span>Your message</span>
+                        <div className="p-[2px] rounded-3xl bg-gradient-to-b from-[#00c950] via-[#386641] to-[#228B22]">
+                            <textarea
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
+                                required
+                                rows={5}
+                                className="w-full px-5 py-3 rounded-sm bg-black text-start outline-none"
+                                placeholder="Share your thoughts..."
+                            />
+                        </div>
+                    </label>
+
+                    {/* ✅ BUTTON MUST BE INSIDE FORM */}
+                    <div className="flex justify-center">
+                        <Button type="submit" title="Contact" loading={loading} />
                     </div>
-                </div>
+                </form>
+
             </div>
         </section>
     )
