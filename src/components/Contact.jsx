@@ -4,32 +4,43 @@ import { useRef, useState } from 'react';
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx'
 import Button from '../components/Button';
-/*
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { animateWithGsap } from '../constants/animations.js';
-*/
+import gsap from 'gsap'
+import {useGSAP} from "@gsap/react";
+import {animateWithGsap} from "../utils/animations.js";
+
+gsap.registerPlugin(useGSAP);
 
 const Contact = () => {
-  /*  useGSAP(() => {
-        gsap.from('#contact', {
-            scrollTrigger: {
-                trigger: '#contact',
-                start: '20% bottom'
-            },
-            opacity: 0,
-            scale: 2,
-            duration: 2,
-            ease: 'power2.inOut'
-        })
 
-        animateWithGsap('.g_fadeIn', {
-            opacity: 1,
+    useGSAP(() => {
+
+        animateWithGsap('#slide', {
             y: 0,
-            duration: 1,
-            ease: 'power2.inOut'
-        })
-    }, []);*/
+            opacity: 1,
+            duration: 1
+        });
+
+        animateWithGsap(
+            '.animate-grow',
+            {
+                scale: 1,
+                opacity: 1,
+                ease: 'back.in',
+                duration: 1.5
+            }
+        );
+
+        animateWithGsap(
+            '.animate-fade-in',
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 2
+            }
+        );
+
+    }, []);
 
     const formRef = useRef();
 

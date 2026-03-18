@@ -5,39 +5,53 @@ import { animateWithGsap } from '/src/utils/animations.js';
 import imgOne from '/public/img-one.png';
 import imgTwo from '/public/img-two.JPG';
 import imgThree from '/public/img-three.JPG';
+import { useGSAP } from '@gsap/react'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const sectionRef = useRef();
 
-    useEffect(() => {
-        // Animate title
-        animateWithGsap("#about", { y: 0, opacity: 1 });
 
-        // Animate image grow
+    useEffect(() => {
+
+        animateWithGsap("#about", {
+            y: 0,
+            opacity: 1,
+            duration: 1
+    });
+
+        animateWithGsap(
+            '.animate-fade-in',
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 0.1
+            }
+        );
+
         animateWithGsap('.g_grow', {
                 keyframes: [
-                    { scale: 1, opacity: 1, duration: 0.5 },   // start fully visible
-                    { scale: 1.5, opacity: 0.3, duration: 0.9 }, // fade down
-                    { scale: 1, opacity: 1, duration: 0.5 }    // back to full
+                    { scale: 1, opacity: 1, duration: 0.5 },
+                    { scale: 1.5, opacity: 0.3, duration: 0.9 },
+                    { scale: 1, opacity: 1, duration: 0.5 }
                 ],
                 ease: 'power1.inOut'
             },
             { scrub: 40 }
         );
 
-        // Animate text
-        animateWithGsap("#about", { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 });
     }, []);
 
     return (
-        <section ref={sectionRef} id="about" className="my-30">
+        <section ref={sectionRef} id="about" className="my-30 opacity-0.5 translate-y-10">
             <div>
-                <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
+                <h2 className="animate-fade-in opacity-0.5 translate-y-10 text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
                     Easy-uana is a Game-Changer
                 </h2>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     1. Capture RFID Tag Numbers in Seconds
                 </p>
                 <p>
@@ -45,7 +59,7 @@ const About = () => {
                     No Expensive Gear Needed: Forget about clunky handheld RFID scanners—all you need is your phone.
                     Eliminates Errors: Say goodbye to manual input mistakes and the stress of compliance violations.
                 </p>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     2. Instant METRC-Compliant Formatting
                 </p>
                 <p>
@@ -53,7 +67,7 @@ const About = () => {
                     Simplified Downloads: Save your template directly to your computer in seconds, keeping your workflow smooth and efficient.
                     One Template at a Time, Perfectly Tailored: Focus on what matters most—your plants—while Easy-uana handles the compliance details.
                 </p>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     3. Built for Growers, Not Tech Gurus
                 </p>
                 <p>
@@ -74,13 +88,13 @@ const About = () => {
                     Small Grow Operations
                     Keep your compliance process simple and stress-free with an affordable, straightforward solution.
                 </p>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     4. Large Cultivators
                 </p>
                 <p>
                     Easily manage the complexities of compliance without adding unnecessary overhead or equipment.
                 </p>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     5. Why Growers Love Easy-uana
                 </p>
                 <p>
@@ -88,7 +102,7 @@ const About = () => {
                     Reliable Results: Beta testers report saving 50% of their compliance management time.
                     No Hidden Costs: Affordable, transparent pricing with no need for additional hardware.
                 </p>
-                <p>
+                <p className="animate-fade-in opacity-0.5 translate-y-10">
                     6. Take Control of Compliance Today
                 </p>
                 <p>

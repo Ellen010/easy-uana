@@ -1,7 +1,42 @@
 import React from 'react';
 import Button from "../components/Button";
+import gsap from 'gsap'
+import {useGSAP} from "@gsap/react";
+import {animateWithGsap} from "../utils/animations.js";
+
+gsap.registerPlugin(useGSAP);
 
 const Download = () => {
+
+    useGSAP(() => {
+
+        animateWithGsap('#slide', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        });
+
+        animateWithGsap(
+            '.animate-grow',
+            {
+                scale: 1,
+                opacity: 1,
+                ease: 'back.in',
+                duration: 1.5
+            }
+        );
+
+        animateWithGsap(
+            '.animate-fade-in',
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 2
+            }
+        );
+
+    }, []);
 
     return (
         <section className="my-30">

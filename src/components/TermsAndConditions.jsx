@@ -1,36 +1,72 @@
 import React from 'react'
 import logo from '/public/logo.png'
+import gsap from 'gsap'
+import {useGSAP} from "@gsap/react";
+import {animateWithGsap} from "../utils/animations.js";
+
+gsap.registerPlugin(useGSAP);
 
 const TermsAndConditions = () => {
+
+    useGSAP(() => {
+
+        animateWithGsap('#terms', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        });
+
+        animateWithGsap(
+            '.animate-grow',
+            {
+                scale: 1,
+                opacity: 1,
+                ease: 'back.in',
+                duration: 1.5
+            }
+        );
+
+        animateWithGsap(
+            '.animate-fade-in',
+            {
+                y: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                duration: 2
+            }
+        );
+
+    }, []);
+
     return (
-        <section className="my-30 relative">
+        <section id="terms" className="my-30 relative">
             <div className="m-9 relative max-w-4xl mx-auto leading-relaxed space-y-4">
                 <img src={logo} alt="logo" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] opacity-30 pointer-events-none"/>
 
-                <h1 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950 mb-30">
+                <h1 className="animate-fade-in animate-grow text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950 mb-30">
                     TERMS AND CONDITIONS for Easy-Uana
                 </h1>
-                    <p>
+                <p className="animate-fade-in animate-grow">
                         Last Updated: 05.22.2025
                     </p>
-                    <p>
+                <p className="animate-fade-in animate-grow">
                         Welcome to Easy Uana ("App"), a software application designed to assist licensed cannabis businesses in managing plant tags, harvesting, and compliance reporting for METRC in legal states. Please read these Terms and Conditions ("Terms") carefully before using the App.
                     </p>
                     <p>
                         By accessing or using Easy Uana, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you may not use the App.
                     </p>
 
-                    <p>
+                <p className="animate-fade-in animate-grow">
                         1. Eligibility
                         You must be at least 21 years old and hold a valid cannabis license in a state where cannabis is legally regulated to use this App. By using Easy Uana, you confirm that you meet these requirements.
 
                     </p>
-                    <p>
+                <p className="animate-fade-in animate-grow">
                         2. Compliance with Laws
                         You are solely responsible for ensuring compliance with all applicable federal, state, and local cannabis regulations, including but not limited to METRC requirements. The App is a tool for facilitating compliance but does not guaranteecompliance with any legal or regulatory obligations.
 
                     </p>
-                    <p>
+                <p className="animate-fade-in animate-grow">
                         3. Account Registration
                         To use the App, you must create an account with accurate and complete information.
 
