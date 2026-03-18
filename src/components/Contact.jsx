@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx'
-import Button from '../components/Button.jsx';
+import Button from '../components/Button';
 /*
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -147,12 +147,9 @@ const Contact = () => {
                                 placeholder="Share your thoughts..."
                             />
                         </div>
+                        <Button type="submit" title="Contact" loading={loading} />
                     </label>
 
-                    {/* ✅ BUTTON MUST BE INSIDE FORM */}
-                    <div className="flex justify-center">
-                        <Button type="submit" title="Contact" loading={loading} />
-                    </div>
                 </form>
 
             </div>

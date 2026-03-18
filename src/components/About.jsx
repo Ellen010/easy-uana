@@ -13,7 +13,7 @@ const About = () => {
 
     useEffect(() => {
         // Animate title
-        animateWithGsap('#features_title', { y: 0, opacity: 1 });
+        animateWithGsap("#about", { y: 0, opacity: 1 });
 
         // Animate image grow
         animateWithGsap('.g_grow', {
@@ -28,11 +28,11 @@ const About = () => {
         );
 
         // Animate text
-        animateWithGsap('.g_text', { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 });
+        animateWithGsap("#about", { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 });
     }, []);
 
     return (
-        <section ref={sectionRef} className="my-30">
+        <section ref={sectionRef} id="about" className="my-30">
             <div>
                 <h2 className="text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
                     Easy-uana is a Game-Changer
