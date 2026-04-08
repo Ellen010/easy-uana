@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Download from "./components/Download";
 import TermsAndConditions  from "./components/TermsAndConditions";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
@@ -106,6 +107,7 @@ function AppContent() {
                 <Route path="/about" element={<About />} />
                 <Route path="/download" element={<Download />} />
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/termsAndConditions" element={<Navigate to="/terms-and-conditions" replace />} />
             </Routes>
 
