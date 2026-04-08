@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import * as Sentry from "@sentry/react";
-import { Auth0Provider } from "@auth0/auth0-react";
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import gsap from "gsap";
 
 import Navbar from "./components/Navbar";
@@ -14,13 +11,22 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
 
-function App() {
+function AppContent() {
+    const location = useLocation();
 
     useEffect(() => {
+        if (location.pathname !== "/") {
+            return;
+        }
 
         const grid = document.getElementById("pixel-grid");
+        const intro = document.getElementById("intro");
+        if (!grid || !intro) return;
+
+        grid.innerHTML = "";
         const cols = 40;
         const rows = 25;
+        let hasAnimated = false;
 
         // create pixels
         for (let y = 0; y < rows; y++) {
@@ -39,6 +45,8 @@ function App() {
         }
 
         const triggerIntroAnimation = () => {
+            if (hasAnimated) return;
+            hasAnimated = true;
 
             gsap.to(".pixel", {
                 opacity: 0,
@@ -49,7 +57,6 @@ function App() {
                     from: "random"
                 },
                 onComplete: () => {
-                    const intro = document.getElementById("intro");
                     if (intro) intro.style.display = "none";
                 }
             });
@@ -68,56 +75,52 @@ function App() {
         window.addEventListener("mousemove", triggerIntroAnimation);
         window.addEventListener("click", triggerIntroAnimation);
         window.addEventListener("keydown", triggerIntroAnimation);
+        const autoDismissTimer = window.setTimeout(triggerIntroAnimation, 1200);
 
-        return () => removeListeners();
+        return () => {
+            window.clearTimeout(autoDismissTimer);
+            removeListeners();
+            grid.innerHTML = "";
+        };
 
-    }, []);
+    }, [location.pathname]);
 
     return (
-        <Router>
-            <div className="bg-black min-h-screen text-white">
-                {/* Navbar + Auth Buttons */}
-                <Navbar />
+        <div className="bg-black min-h-screen text-white">
+            {/* Navbar + Auth Buttons */}
+            <Navbar />
 
-                {/* Routes */}
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <>
-                                <div id="intro">
-                                    <div id="pixel-grid"></div>
-                                </div>
-                                <Hero />
-                                <About />
-                                <Download />
-                                <TermsAndConditions />
-                                <Contact />
-                            </>
-                        }
-                    />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/download" element={<Download />} />
-                    <Route path="/termsAndConditions" element={<TermsAndConditions />} />
-                </Routes>
+            {/* Routes */}
+            <Routes>
+                <Route
+                path="/"
+                element={
+                    <>
+                        <Hero />
+                        <About />
+                        <Download />
+                            <Contact />
+                        </>
+                    }
+                />
+                <Route path="/about" element={<About />} />
+                <Route path="/download" element={<Download />} />
+                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="/termsAndConditions" element={<Navigate to="/terms-and-conditions" replace />} />
+            </Routes>
 
-                {/* Footer */}
-                <Footer />
-            </div>
-        </Router>
+            {/* Footer */}
+            <Footer />
+        </div>
     );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <Auth0Provider
-            domain="YOUR_AUTH0_DOMAIN"
-            clientId="YOUR_AUTH0_CLIENT_ID"
-            authorizationParams={{ redirect_uri: window.location.origin }}
-        >
-            {Sentry.withProfiler(<App />)}
-        </Auth0Provider>
-    </React.StrictMode>
-);
+function App() {
+    return (
+        <Router>
+            <AppContent />
+        </Router>
+    );
+}
 
 export default App;
