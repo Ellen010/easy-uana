@@ -7,7 +7,7 @@ import About from "./components/About";
 import Download from "./components/Download";
 import TermsAndConditions  from "./components/TermsAndConditions";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import NotAffiliatedWithMetrc from "./components/NotAffiliatedWithMetrc";
+import NotAffiliatedWithMetrc from "./components/NotAffiliatedWithMETRC";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
