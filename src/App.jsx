@@ -120,36 +120,38 @@ function AppContent() {
         );
     }
 
-    return (
-        <div className="bg-black min-h-screen text-white">
-            {ageVerification !== "yes" && (
-                <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
-                    <div className="age-gate__panel">
-                        <span className="age-gate__eyebrow">Age verification</span>
-                        <h2 id="age-gate-title" className="age-gate__title">Are you 21+ years old?</h2>
-                        <p className="age-gate__text">
-                            Please confirm your age before entering the website.
-                        </p>
-                        <div className="age-gate__actions">
-                            <button
-                                type="button"
-                                className="age-gate__button age-gate__button--primary"
-                                onClick={() => setAgeVerification("yes")}
-                            >
-                                Yes
-                            </button>
-                            <button
-                                type="button"
-                                className="age-gate__button age-gate__button--secondary"
-                                onClick={() => setAgeVerification("no")}
-                            >
-                                No
-                            </button>
-                        </div>
+    if (ageVerification !== "yes") {
+        return (
+            <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+                <div className="age-gate__panel">
+                    <span className="age-gate__eyebrow">Age verification</span>
+                    <h2 id="age-gate-title" className="age-gate__title">Are you 21+ years old?</h2>
+                    <p className="age-gate__text">
+                        Please confirm your age before entering the website.
+                    </p>
+                    <div className="age-gate__actions">
+                        <button
+                            type="button"
+                            className="age-gate__button age-gate__button--primary"
+                            onClick={() => setAgeVerification("yes")}
+                        >
+                            Yes
+                        </button>
+                        <button
+                            type="button"
+                            className="age-gate__button age-gate__button--secondary"
+                            onClick={() => setAgeVerification("no")}
+                        >
+                            No
+                        </button>
                     </div>
                 </div>
-            )}
+            </div>
+        );
+    }
 
+    return (
+        <div className="bg-black min-h-screen text-white">
             <Navbar />
 
             <Routes>
