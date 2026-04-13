@@ -9,6 +9,10 @@ body {
   background-color: #000000;
 }
 
+#root {
+  width: 100%;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -64,7 +68,6 @@ p {
   margin: 3rem;
 }
 
-/* INTRO IMAGE ANNIMATION */
 #intro {
   position: fixed;
   top: 0;
@@ -75,7 +78,6 @@ p {
   overflow: hidden;
 }
 
-/* Each half of the image */
 #intro{
   position: fixed;
   inset:0;
@@ -100,7 +102,92 @@ p {
   position: absolute;
 }
 
-/*DOWNLOAD PAGE*/
 .product {
   @apply w-full h-full object-cover object-center scale-150 opacity-0 rounded-lg;
+}
+
+.age-gate,
+.age-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.96);
+}
+
+.age-gate__panel,
+.age-screen__content {
+  width: min(100%, 34rem);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(24, 24, 24, 0.98), rgba(8, 8, 8, 0.98));
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.age-gate__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: #7bd96d;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.age-gate__title,
+.age-screen__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.age-gate__text,
+.age-screen__notice {
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.age-gate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.age-gate__button {
+  min-width: 8rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.age-gate__button:hover {
+  transform: translateY(-1px);
+}
+
+.age-gate__button--primary {
+  background: #35962c;
+  color: #ffffff;
+}
+
+.age-gate__button--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.age-screen__content {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }

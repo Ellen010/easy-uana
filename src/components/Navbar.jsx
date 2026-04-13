@@ -15,9 +15,19 @@ const Navbar = () => {
                 <h1 className="text-3xl sm:text-lg md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-mist-50 light:text-emerald-950"> Easy-uana </h1>
 
                 {/*Desktop Menu*/}
-                        <div className="hidden sm:flex space-x-1">
+                        <div className="hidden sm:flex items-start gap-2 md:gap-2.5">
                             {menuItems.map((item) => (
-                                <Link key={item.name} to={item.path}  className="px-2 text-sm cursor-pointer text-gray hover:scale-120 transition-transform duration-300"> {item.name} </Link>
+                                <Link
+                                    key={item.name}
+                                    to={item.path}
+                                    className="max-w-[4.75rem] text-center text-[10px] md:text-xs leading-tight cursor-pointer text-gray hover:scale-110 transition-transform duration-300"
+                                >
+                                    {item.name.split(" ").map((word) => (
+                                        <span key={`${item.name}-${word}`} className="block">
+                                            {word}
+                                        </span>
+                                    ))}
+                                </Link>
                             ))}
                         </div>
 

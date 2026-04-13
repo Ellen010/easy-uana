@@ -44,6 +44,19 @@ const About = () => {
 
     return (
         <section ref={sectionRef} id="about" className="my-30">
+
+            <div className="flex flex-row my-35">
+                <div className="overflow-hidden flex-1 h-[50vh]">
+                    <img src={imgOne} alt="titanium 2" className="product g_grow" />
+                </div>
+                <div className="overflow-hidden flex-1 h-[50vh] mx-5">
+                    <img src={imgTwo} alt="titanium 2" className="product g_grow" />
+                </div>
+                <div className="overflow-hidden flex-1 h-[50vh]">
+                    <img src={imgThree} alt="titanium 2" className="product g_grow" />
+                </div>
+            </div>
+
             <div>
                 <h2 className="animate-fade-in text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
                     Easy-uana is a Game-Changer
@@ -105,18 +118,6 @@ const About = () => {
                 <p>
                     Don’t let METRC compliance slow you down. With Easy-uana, you can simplify your workflow, save time, and focus on growing your business.
                 </p>
-            </div>
-
-            <div className="flex flex-row my-25">
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                    <img src={imgOne} alt="titanium 2" className="product g_grow" />
-                </div>
-                <div className="overflow-hidden flex-1 h-[50vh] mx-5">
-                    <img src={imgTwo} alt="titanium 2" className="product g_grow" />
-                </div>
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                    <img src={imgThree} alt="titanium 2" className="product g_grow" />
-                </div>
             </div>
 
         </section>

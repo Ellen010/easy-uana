@@ -39,7 +39,6 @@ const TermsAndConditions = () => {
 
     return (
         <section id="terms" className="my-30 relative">
-            <div className="m-9 relative max-w-6xl mx-auto leading-relaxed space-y-6 text-center text-lg sm:text-xl">
                 <img src="/logo.png" alt="logo" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] opacity-30 pointer-events-none"/>
 
                 <h1 className="animate-fade-in animate-grow text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-mist-50 light:text-emerald-950 mb-30">
@@ -155,7 +154,6 @@ const TermsAndConditions = () => {
                         For any questions regarding these Terms, please contact us at help.easyuana@gmail.com
                     </p>
 
-            </div>
         </section>
     )
 }
