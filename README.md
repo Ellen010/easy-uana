@@ -54,12 +54,13 @@ The project is built as a single-page React application with route-based pages f
   <img src="./public/logo.png" alt="Easy-uana branding" width="720" />
 </p>
 
-### Product Gallery
+### Website Gallery
 
 <p align="center">
-  <img src="./public/img-one.png" alt="Easy-uana product gallery image one" width="30%" />
-  <img src="./public/img-two.JPG" alt="Easy-uana product gallery image two" width="30%" />
-  <img src="./public/img-three.JPG" alt="Easy-uana product gallery image three" width="30%" />
+<img src="https://github.com/user-attachments/assets/d111702b-6c2c-472c-b8f8-e2e2a55072a4" width="90%" />
+<img src="https://github.com/user-attachments/assets/d5c9ad65-db3d-4522-8790-2ddef49f71cb" width="90%" />
+<img src="https://github.com/user-attachments/assets/fdbe3e65-f23d-4e28-abe9-1b4973fec102" width="90%" />
+<img src="https://github.com/user-attachments/assets/ad9e3c73-bb8f-4551-9a3f-1b30366b2813" width="90%" />
 </p>
 
 ## Getting Started
