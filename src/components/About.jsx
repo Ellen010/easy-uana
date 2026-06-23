@@ -58,6 +58,9 @@ const About = () => {
             </div>
 
             <div className="mx-auto my-24 max-w-6xl px-6 sm:px-8">
+                <h2 className="mb-10 text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                    How to
+                </h2>
                 <video
                     className="mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg"
                     src="/videos/how-to.MOV"
