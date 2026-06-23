@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from "../components/Button";
 import gsap from 'gsap'
 import {useGSAP} from "@gsap/react";
 import {animateWithGsap} from "../utils/animations.js";
@@ -48,7 +47,6 @@ const Download = () => {
             <p className="text-evenly text-2xl">
                 The app is designed to save time, reduce human error, and simplify plant tracking for cannabis cultivation businesses operating in regulated states. Download Easy-uana today from the App Store and streamline your compliance workflow with a tool built specifically for growers.
             </p>
-            <Button title="Download" href="https://apps.apple.com/us/app/easyuana/id6742842577"/>
 
         </section>
     );

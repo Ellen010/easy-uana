@@ -7,9 +7,10 @@ const Button = ({
                     type = "button",
                     onClick,
                     href,
+                    wrapperClassName = "",
                 }) => {
 
-    const baseClasses =  "px-20 py-5 rounded-3xl m-5 backdrop-blur flex-center text-white text-2xl transition-all duration-300";
+    const baseClasses =  "px-10 py-4 sm:px-20 sm:py-5 rounded-3xl backdrop-blur text-white text-2xl transition-all duration-300";
 
     const stateClasses = disabled || loading
         ? "bg-green-300 cursor-not-allowed"
@@ -19,7 +20,7 @@ const Button = ({
 
     if (href) {
         return (
-            <div className="flex flex-col items-center opacity-100 translate-y-10 mt-3 mb-3">
+            <div className={`flex flex-col items-center opacity-100 mt-3 mb-3 ${wrapperClassName}`}>
                 <a
                     href={href}
                     className={`${baseClasses} ${stateClasses}`}
@@ -33,7 +34,7 @@ const Button = ({
     }
 
     return (
-        <div className="flex flex-col items-center opacity-100 translate-y-10 mt-3 mb-3">
+        <div className={`flex flex-col items-center opacity-100 mt-3 mb-3 ${wrapperClassName}`}>
             <button
                 type={type}
                 onClick={onClick}

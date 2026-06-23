@@ -45,7 +45,7 @@ const About = () => {
     return (
         <section ref={sectionRef} id="about" className="my-30">
 
-            <div className="flex flex-row my-35">
+            <div className="flex flex-col gap-5 my-35 md:flex-row">
                 <div className="overflow-hidden flex-1 h-[50vh]">
                     <img src={imgOne} alt="titanium 2" className="product g_grow" />
                 </div>
@@ -55,6 +55,19 @@ const About = () => {
                 <div className="overflow-hidden flex-1 h-[50vh]">
                     <img src={imgThree} alt="titanium 2" className="product g_grow" />
                 </div>
+            </div>
+
+            <div className="mx-auto my-24 max-w-6xl px-6 sm:px-8">
+                <video
+                    className="mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg"
+                    src="/videos/how-to.MOV"
+                    autoPlay
+                    controls
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                />
             </div>
 
             <div>
