@@ -3,12 +3,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { animateWithGsap } from '/src/utils/animations.js';
 import { useGSAP } from '@gsap/react'
+import { useLocation } from 'react-router-dom';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const sectionRef = useRef();
+    const location = useLocation();
+    const isAboutPage = location.pathname === "/about";
 
 
     useEffect(() => {
@@ -44,16 +47,49 @@ const About = () => {
 
     return (
         <section ref={sectionRef} id="about" className="my-30">
+            {isAboutPage && (
+                <div className="animate-fade-in mx-auto mb-24 max-w-5xl px-6 text-center">
+                    <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                        About
+                    </h2>
+                    <p className="m-0 text-2xl leading-relaxed">
+                        Tired of the tedious, time-consuming process of tracking your cannabis plants for METRC compliance? Say goodbye to manual data entry and hello to Easy-uana — the revolutionary iOS app designed exclusively for cannabis growers. With Easy-uana, you can effortlessly capture RFID tag numbers using just your iPhone, instantly format them into METRC-compliant templates, and download them straight to your computer. Simplifying compliance has never been this easy, affordable, or efficient.
+                    </p>
+                </div>
+            )}
 
-            <div className="flex flex-col gap-5 my-35 md:flex-row">
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                    <img src={imgOne} alt="titanium 2" className="product g_grow" />
+            <div className="flex flex-col gap-6 my-35 md:flex-row">
+                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10">
+                    <img src={imgOne} alt="Packaged cannabis flower" className="product g_grow" />
                 </div>
-                <div className="overflow-hidden flex-1 h-[50vh] mx-5">
-                    <img src={imgTwo} alt="titanium 2" className="product g_grow" />
+                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10 md:mt-10">
+                    <img src={imgTwo} alt="Cannabis flower closeup in packaging" className="product g_grow" />
                 </div>
-                <div className="overflow-hidden flex-1 h-[50vh]">
-                    <img src={imgThree} alt="titanium 2" className="product g_grow" />
+                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10">
+                    <img src={imgThree} alt="Cannabis flower texture" className="product g_grow" />
+                </div>
+            </div>
+
+            <div className="animate-fade-in mx-auto max-w-6xl px-6">
+                <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                    Built for Busy Cultivation Teams
+                </h2>
+                <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                    <div className="space-y-6 text-xl leading-relaxed sm:text-2xl">
+                        <p className="m-0">Harvest days are busy enough.</p>
+                        <p className="m-0">
+                            Instead of juggling scanners, paperwork, and spreadsheets, EasyUana helps streamline tag collection and data organization so your team can focus on operations.
+                        </p>
+                    </div>
+                    <div>
+                        <p className="m-0 mb-6 text-center text-2xl font-semibold text-green-400 lg:text-left">The result?</p>
+                        <ul className="grid gap-4 text-base sm:text-lg">
+                            <li className="border-y border-white/15 px-6 py-4">Less manual work</li>
+                            <li className="border-y border-white/15 px-6 py-4">Fewer data entry mistakes</li>
+                            <li className="border-y border-white/15 px-6 py-4">Faster inventory and harvest workflows</li>
+                            <li className="border-y border-white/15 px-6 py-4">Lower equipment costs</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -62,7 +98,7 @@ const About = () => {
                     How to
                 </h2>
                 <video
-                    className="mx-auto block max-h-[70vh] w-auto max-w-full rounded-lg"
+                    className="mx-auto block h-[76vh] max-h-[48rem] w-full max-w-5xl rounded-lg bg-black object-contain"
                     src="/videos/how-to.MOV"
                     autoPlay
                     controls
@@ -73,73 +109,60 @@ const About = () => {
                 />
             </div>
 
-            <div>
-                <h2 className="animate-fade-in text-center text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-30">
-                    Easy-uana is a Game-Changer
+            <div className="animate-fade-in mx-auto max-w-6xl px-6 text-center">
+                <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                    What Users Are Saying
                 </h2>
-                <p className="animate-fade-in">
-                    1. Capture RFID Tag Numbers in Seconds
-                </p>
-                <p>
-                    Fast and Accurate: Simply point your iPhone’s camera at the RFID tag, and Easy-uana captures the tag number with precision.
-                    No Expensive Gear Needed: Forget about clunky handheld RFID scanners—all you need is your phone.
-                    Eliminates Errors: Say goodbye to manual input mistakes and the stress of compliance violations.
-                </p>
-                <p className="animate-fade-in">
-                    2. Instant METRC-Compliant Formatting
-                </p>
-                <p>
-                    Plug-and-Play Templates: The app auto-formats your captured tag numbers into a ready-to-use METRC template.
-                    Simplified Downloads: Save your template directly to your computer in seconds, keeping your workflow smooth and efficient.
-                    One Template at a Time, Perfectly Tailored: Focus on what matters most—your plants—while Easy-uana handles the compliance details.
-                </p>
-                <p className="animate-fade-in">
-                    3. Built for Growers, Not Tech Gurus
-                </p>
-                <p>
-                    User-Friendly Interface: Designed with growers in mind, Easy-uana is intuitive and easy to navigate.
-                    Quick Setup: Get started in minutes with minimal learning curve.
-                    Reminders for Deadlines: Never miss a compliance deadline again with built-in notifications.
-                    Transform Your Operation with Easy-uana
-                    Boost Efficiency
-                    Speed Up Data Capture: Input RFID tag numbers in record time, freeing up hours for other tasks.
-                    Streamline Compliance: Easy-uana takes the guesswork out of regulatory reporting.
-                    Save Money
-                    No Extra Hardware Costs: Use the tools you already have—your iPhone.
-                    Avoid Costly Fines: Accurate data means staying compliant and penalty-free.
-                    Stay in Control
-                    Customizable Simplicity: Easy-uana focuses on one template at a time, ensuring your data is clean, precise, and ready for METRC.
-                    Audit-Ready Records: Keep your operation running smoothly with accurate, organized files.
-                    Perfect for Every Grower
-                    Small Grow Operations
-                    Keep your compliance process simple and stress-free with an affordable, straightforward solution.
-                </p>
-                <p className="animate-fade-in">
-                    4. Large Cultivators
-                </p>
-                <p>
-                    Easily manage the complexities of compliance without adding unnecessary overhead or equipment.
-                </p>
-                <p className="animate-fade-in">
-                    5. Why Growers Love Easy-uana
-                </p>
-                <p>
-                    Focused Simplicity: Does one thing perfectly — capturing and formatting RFID tag numbers.
-                    Reliable Results: Beta testers report saving 50% of their compliance management time.
-                    No Hidden Costs: Affordable, transparent pricing with no need for additional hardware.
-                </p>
-                <p className="animate-fade-in">
-                    6. Take Control of Compliance Today
-                </p>
-                <p>
-                    Don’t let METRC compliance slow you down. With Easy-uana, you can simplify your workflow, save time, and focus on growing your business.
-                </p>
+                <div className="grid gap-5 md:grid-cols-2">
+                    <figure className="border-y border-white/15 px-6 py-8">
+                        <div className="mb-4 text-2xl text-green-400">★★★★★</div>
+                        <blockquote className="text-xl">“Faster than my expensive scanner and cheaper.”</blockquote>
+                    </figure>
+                    <figure className="border-y border-white/15 px-6 py-8">
+                        <div className="mb-4 text-2xl text-green-400">★★★★★</div>
+                        <blockquote className="text-xl">“Easy to use and it makes the whole process faster.”</blockquote>
+                    </figure>
+                </div>
+
+                <h2 className="mb-10 mt-24 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                    Perfect For
+                </h2>
+                <ul className="grid gap-4 text-base sm:grid-cols-2 lg:grid-cols-3">
+                    {perfectFor.map((item) => (
+                        <li key={item} className="border-y border-white/15 px-6 py-4 uppercase tracking-[0.16em]">
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="mx-auto mt-24 max-w-5xl">
+                    <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-tight">
+                        The Scanner You Already Own
+                    </h2>
+                    <div className="mx-auto max-w-4xl space-y-6 text-xl leading-relaxed sm:text-2xl">
+                        <p className="m-0">
+                            If your team is carrying smartphones, you may already have everything needed to collect METRC tag data efficiently.
+                        </p>
+                        <p className="m-0">
+                            Download EasyUana and see why growers are replacing dedicated scanners with the device already in their pocket.
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </section>
 
     )
 }
+
+const perfectFor = [
+    "Cultivators",
+    "Compliance Managers",
+    "Harvest Teams",
+    "Inventory Specialists",
+    "Multi-Facility Operators",
+    "Cannabis Consultants",
+];
 
 const imgOne = '/img-one.png';
 const imgTwo = '/img-two.JPG';

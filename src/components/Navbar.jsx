@@ -6,6 +6,9 @@ import { Link, useLocation } from 'react-router-dom'
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const location = useLocation();
+    const navItems = location.pathname === "/"
+        ? menuItems
+        : [{ name: "Home", path: "/" }, ...menuItems];
 
     useEffect(() => {
         setOpen(false);
@@ -21,7 +24,7 @@ const Navbar = () => {
 
                 {/*Desktop Menu*/}
                         <div className="hidden lg:flex items-start gap-6 md:gap-5.5">
-                            {menuItems.map((item) => (
+                            {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     to={item.path}
@@ -62,7 +65,7 @@ const Navbar = () => {
                                     ×
                                 </button>
                             </div>
-                            {menuItems.map((item) => (
+                            {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     to={item.path}
