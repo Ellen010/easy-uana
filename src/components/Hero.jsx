@@ -25,6 +25,26 @@ const Hero = () => {
             }
         );
 
+        gsap.fromTo(
+            '.hero-feature-item',
+            {
+                autoAlpha: 0,
+                y: 24
+            },
+            {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.75,
+                ease: 'power2.out',
+                stagger: 0.12,
+                scrollTrigger: {
+                    trigger: '.hero-feature-list',
+                    start: 'top 82%',
+                    toggleActions: 'restart reverse restart reverse'
+                }
+            }
+        );
+
     }, []);
 
     return (
@@ -51,14 +71,17 @@ const Hero = () => {
                             className="g_grow h-full w-full rounded-md object-cover object-center"
                         />
                     </div>
-                    <div>
-                        <p className="m-0 mb-8 text-center text-2xl font-semibold lg:text-left">With EasyUana, your team can use an iPhone to:</p>
-                        <ul className="grid gap-x-12 gap-y-5 text-lg sm:grid-cols-2">
-                            <li className="border-l border-green-500/70 pl-4">Scan METRC tags in seconds</li>
-                            <li className="border-l border-green-500/70 pl-4">Export directly to CSV</li>
-                            <li className="border-l border-green-500/70 pl-4">Organize scans by harvest or batch</li>
-                            <li className="border-l border-green-500/70 pl-4">Reduce manual data entry</li>
-                            <li className="border-l border-green-500/70 pl-4 sm:col-span-2">Eliminate the need for dedicated scanning hardware</li>
+                    <div className="w-full">
+                        <p className="m-0 mb-10 text-center text-2xl font-semibold leading-snug lg:text-left lg:text-3xl">With EasyUana, your team can use an iPhone to:</p>
+                        <ul className="hero-feature-list grid gap-5 text-base leading-relaxed sm:text-lg md:grid-cols-2 lg:gap-6">
+                            {features.map((feature, index) => (
+                                <li
+                                    key={feature}
+                                    className={`hero-feature-item min-h-20 border-l border-green-500/70 px-5 py-4 transition-all duration-300 hover:border-green-400 hover:bg-white/[0.03] hover:pl-7 ${index === features.length - 1 ? 'md:col-span-2' : ''}`}
+                                >
+                                    {feature}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -72,5 +95,13 @@ const Hero = () => {
         </section>
     )
 }
+
+const features = [
+    'Scan METRC tags in seconds',
+    'Export directly to CSV',
+    'Organize scans by harvest or batch',
+    'Reduce manual data entry',
+    'Eliminate the need for dedicated scanning hardware',
+];
 
 export default Hero
