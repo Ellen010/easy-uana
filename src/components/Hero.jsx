@@ -48,7 +48,7 @@ const Hero = () => {
                         <img
                             src="/app-use-feature.png"
                             alt="EasyUana app used to scan cannabis tags"
-                            className="g_grow h-full w-full rounded-md object-cover object-center"
+                            className="h-full w-full rounded-md object-cover object-center"
                         />
                     </div>
                     <div>
