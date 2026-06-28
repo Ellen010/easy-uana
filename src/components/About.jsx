@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { animateWithGsap } from '/src/utils/animations.js';
-import { useGSAP } from '@gsap/react'
 import { useLocation } from 'react-router-dom';
+import Button from './Button';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -58,14 +58,14 @@ const About = () => {
                 </div>
             )}
 
-            <div className="flex flex-col gap-6 my-35 md:flex-row">
-                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10">
+            <div className="my-35 flex flex-nowrap gap-5 overflow-x-auto pb-3">
+                <div className="min-w-[18rem] flex-1 overflow-hidden h-[44vh] border-y border-white/10 transition-colors duration-300 hover:border-green-500">
                     <img src={imgOne} alt="Packaged cannabis flower" className="product g_grow" />
                 </div>
-                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10 md:mt-10">
+                <div className="min-w-[18rem] flex-1 overflow-hidden h-[44vh] border-y border-white/10 transition-colors duration-300 hover:border-green-500">
                     <img src={imgTwo} alt="Cannabis flower closeup in packaging" className="product g_grow" />
                 </div>
-                <div className="overflow-hidden flex-1 h-[44vh] border-y border-white/10">
+                <div className="min-w-[18rem] flex-1 overflow-hidden h-[44vh] border-y border-white/10 transition-colors duration-300 hover:border-green-500">
                     <img src={imgThree} alt="Cannabis flower texture" className="product g_grow" />
                 </div>
             </div>
@@ -84,10 +84,10 @@ const About = () => {
                     <div>
                         <p className="m-0 mb-6 text-center text-2xl font-semibold text-green-400 lg:text-left">The result?</p>
                         <ul className="grid gap-4 text-base sm:text-lg">
-                            <li className="border-y border-white/15 px-6 py-4">Less manual work</li>
-                            <li className="border-y border-white/15 px-6 py-4">Fewer data entry mistakes</li>
-                            <li className="border-y border-white/15 px-6 py-4">Faster inventory and harvest workflows</li>
-                            <li className="border-y border-white/15 px-6 py-4">Lower equipment costs</li>
+                            <li className="border-y border-white/15 px-6 py-4 transition-colors duration-300 hover:border-green-500">Less manual work</li>
+                            <li className="border-y border-white/15 px-6 py-4 transition-colors duration-300 hover:border-green-500">Fewer data entry mistakes</li>
+                            <li className="border-y border-white/15 px-6 py-4 transition-colors duration-300 hover:border-green-500">Faster inventory and harvest workflows</li>
+                            <li className="border-y border-white/15 px-6 py-4 transition-colors duration-300 hover:border-green-500">Lower equipment costs</li>
                         </ul>
                     </div>
                 </div>
@@ -114,14 +114,20 @@ const About = () => {
                     What Users Are Saying
                 </h2>
                 <div className="grid gap-5 md:grid-cols-2">
-                    <figure className="border-y border-white/15 px-6 py-8">
+                    <figure className="border-y border-white/15 px-6 py-8 transition-colors duration-300 hover:border-green-500">
                         <div className="mb-4 text-2xl text-green-400">★★★★★</div>
                         <blockquote className="text-xl">“Faster than my expensive scanner and cheaper.”</blockquote>
                     </figure>
-                    <figure className="border-y border-white/15 px-6 py-8">
+                    <figure className="border-y border-white/15 px-6 py-8 transition-colors duration-300 hover:border-green-500">
                         <div className="mb-4 text-2xl text-green-400">★★★★★</div>
                         <blockquote className="text-xl">“Easy to use and it makes the whole process faster.”</blockquote>
                     </figure>
+                </div>
+                <div className="mt-10">
+                    <Button
+                        title="Reviews"
+                        href="https://apps.apple.com/us/app/easyuana/id6742842577?see-all=reviews&platform=iphone"
+                    />
                 </div>
 
                 <h2 className="mb-10 mt-24 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
@@ -129,7 +135,7 @@ const About = () => {
                 </h2>
                 <ul className="grid gap-4 text-base sm:grid-cols-2 lg:grid-cols-3">
                     {perfectFor.map((item) => (
-                        <li key={item} className="border-y border-white/15 px-6 py-4 uppercase tracking-[0.16em]">
+                        <li key={item} className="border-y border-white/15 px-6 py-4 uppercase tracking-[0.16em] transition-colors duration-300 hover:border-green-500">
                             {item}
                         </li>
                     ))}

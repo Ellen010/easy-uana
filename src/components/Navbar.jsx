@@ -1,18 +1,15 @@
-import { React, useEffect, useState } from "react"
+import { React, useState } from "react"
 import logo from "/logo.png"
 import { menuItems }  from "/src/constants/index.js"
 import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
-    const [open, setOpen] = useState(false);
+    const [openPath, setOpenPath] = useState(null);
     const location = useLocation();
+    const open = openPath === location.pathname;
     const navItems = location.pathname === "/"
         ? menuItems
         : [{ name: "Home", path: "/" }, ...menuItems];
-
-    useEffect(() => {
-        setOpen(false);
-    }, [location.pathname]);
 
     return (
         <header className="relative z-50 w-full py-7 sm:px-10">
@@ -47,7 +44,7 @@ const Navbar = () => {
                             className="lg:hidden text-white text-3xl leading-none"
                             aria-expanded={open}
                             aria-label="Open navigation menu"
-                            onClick={() => setOpen(true)}
+                            onClick={() => setOpenPath(location.pathname)}
                         >
                             ☰
                         </button>
@@ -60,7 +57,7 @@ const Navbar = () => {
                                     type="button"
                                     className="text-white text-3xl leading-none"
                                     aria-label="Close navigation menu"
-                                    onClick={() => setOpen(false)}
+                                    onClick={() => setOpenPath(null)}
                                 >
                                     ×
                                 </button>
@@ -70,7 +67,7 @@ const Navbar = () => {
                                     key={item.name}
                                     to={item.path}
                                     className="py-2 text-center text-lg text-white"
-                                    onClick={() => setOpen(false)}
+                                    onClick={() => setOpenPath(null)}
                                 >
                                     {item.name}
                                 </Link>

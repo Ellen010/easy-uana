@@ -12,7 +12,7 @@ const footerLinks = [
 const Footer = () => {
     return (
         <section id="footer" className="flex flex-col items-center justify-center mt-30 pb-10">
-            <div className="bg-stone-300 my-1 h-[3px] w-3/4 hover:bg-green-600 transition-colors duration-300"></div>
+            <div className="my-1 h-[3px] w-3/4 bg-stone-300 transition-all duration-300 hover:bg-green-500 hover:shadow-[0_0_18px_rgba(34,197,94,0.75)]"></div>
             <nav className="mt-8 grid w-full max-w-6xl grid-cols-1 gap-3 px-6 text-center sm:grid-cols-5">
                 {footerLinks.map((link) => (
                     <Link

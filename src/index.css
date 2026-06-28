@@ -103,7 +103,7 @@ p {
 }
 
 .product {
-  @apply w-full h-full object-cover object-center scale-150 opacity-0 rounded-lg;
+  @apply w-full h-full object-cover object-center scale-150 opacity-0 rounded-md;
 }
 
 .age-gate,
