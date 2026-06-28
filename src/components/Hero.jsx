@@ -46,9 +46,9 @@ const Hero = () => {
                 <div className="mx-auto grid max-w-6xl items-center gap-10 border-y border-white/20 py-10 transition-colors duration-300 hover:border-green-500 lg:grid-cols-[30rem_1fr]">
                     <div className="relative mx-auto h-[34rem] w-full max-w-[30rem] overflow-hidden rounded-md border-y border-white/15 transition-colors duration-300 hover:border-green-500">
                         <img
-                            src="/app-use-feature.png"
+                            src="/app-use.png"
                             alt="EasyUana app used to scan cannabis tags"
-                            className="h-full w-full rounded-md object-cover object-center"
+                            className="g_grow h-full w-full rounded-md object-cover object-center"
                         />
                     </div>
                     <div>
