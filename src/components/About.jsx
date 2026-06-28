@@ -141,17 +141,19 @@ const About = () => {
                     ))}
                 </ul>
 
-                <div className="mx-auto mt-24 max-w-5xl">
-                    <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-tight">
-                        The Scanner You Already Own
-                    </h2>
-                    <div className="mx-auto max-w-4xl space-y-6 text-xl leading-relaxed sm:text-2xl">
-                        <p className="m-0">
-                            If your team is carrying smartphones, you may already have everything needed to collect METRC tag data efficiently.
-                        </p>
-                        <p className="m-0">
-                            Download EasyUana and see why growers are replacing dedicated scanners with the device already in their pocket.
-                        </p>
+                <div className="mx-auto mt-24 max-w-5xl overflow-hidden rounded-md border-y border-white/15 bg-[url('/own-bg.png')] bg-cover bg-center">
+                    <div className="bg-black/70 px-6 py-20 backdrop-brightness-75 sm:px-10 lg:px-16">
+                        <h2 className="mb-10 text-xl sm:text-md md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-tight">
+                            The Scanner You Already Own
+                        </h2>
+                        <div className="mx-auto max-w-4xl space-y-6 text-xl leading-relaxed sm:text-2xl">
+                            <p className="m-0">
+                                If your team is carrying smartphones, you may already have everything needed to collect METRC tag data efficiently.
+                            </p>
+                            <p className="m-0">
+                                Download EasyUana and see why growers are replacing dedicated scanners with the device already in their pocket.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
